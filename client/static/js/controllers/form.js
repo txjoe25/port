@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: "POST",
-			url: "/client/static/php/process_contact_form.php",
+			url: "/php-bin/process_contact_form.php",
 			data: { name: name, email : email, subject: subject, message: message}
 		}).success(function(html){
 			form_holder_feedback = html;
