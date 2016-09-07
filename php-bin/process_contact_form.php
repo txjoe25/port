@@ -6,16 +6,19 @@
 		$headers = "From: " . $_POST['email'] . "\r\n";
 
 
-		$sendmail_msg = "Subject: Email from AWS\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\n$message";
+		$sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\nmessage\n============\n$message";
+		
 		$temp = tmpfile();
 		$tempFilename = stream_get_meta_data($temp)['uri'];
 		fwrite($temp, $sendmail_msg);
 		fclose($temp);
-		$output = shell_exec('cat '.$tempFilename.' | sendmail '.$to)
-		print_r($output);
-		//$sent = mail($to,$subject,$message,$headers);
+		
+		file_put_contents($tempFilename, $sendmail_msg);	
 
-		if($sent) {
+		$cmd = 'cat '.$tempFilename.' | sendmail '.$to;
+		$output = shell_exec($cmd);
+
+		if($output == "") {
 			echo '<h2 id="message_feedback">Your message has been sent!</h2>';
 		}
 		else{
