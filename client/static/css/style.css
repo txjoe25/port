@@ -25,15 +25,16 @@ p.indent{
 	padding-top: none;
 }
 img.pic{
-	height: 5em;
+	height: 8em;
 }
 #drop{
 	background: none;
 
 }
 iframe{
+	height: 25em;
 	max-width: 25em;
 }
 
 .w3-dropdown-content { min-width: 90px }
-/*.w3-modal { max-height: 100px }*/
+/*.w3-modal { max-width: 35em; }*/
