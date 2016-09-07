@@ -5,7 +5,15 @@
 		$message = $_POST['message'];
 		$headers = "From: " . $_POST['email'] . "\r\n";
 
-		$sent = mail($to,$subject,$message,$headers);
+
+		$sendmail_msg = "Subject: Email from AWS\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\n$message";
+		$temp = tmpfile();
+		$tempFilename = stream_get_meta_data($temp)['uri'];
+		fwrite($temp, $sendmail_msg);
+		fclose($temp);
+		$output = shell_exec('cat '.$tempFilename.' | sendmail '.$to)
+		print_r($output);
+		//$sent = mail($to,$subject,$message,$headers);
 
 		if($sent) {
 			echo '<h2 id="message_feedback">Your message has been sent!</h2>';
