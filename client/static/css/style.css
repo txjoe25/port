@@ -35,6 +35,9 @@ iframe{
 	height: 25em;
 	max-width: 25em;
 }
+input span{
+	vertical-align:text-top;
+}
 
 .w3-dropdown-content { min-width: 90px }
 /*.w3-modal { max-width: 35em; }*/
