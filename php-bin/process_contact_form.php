@@ -1,5 +1,5 @@
 <?php
-	if (isset($_POST['name'], $_POST['email'], $_POST['message'])){
+	if (isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['resume'])){
 		$to = 'txjoe25@gmail.com';
 		$subject = 'Message from ' . $_POST['name'] . ' (' . $_POST['email'] . ')';
 		$message = $_POST['message'];
@@ -15,7 +15,7 @@
 		
 		$temp = tmpfile();
 		$tempFilename = stream_get_meta_data($temp)['uri'];
-		fwrite($temp, $sendmail_msg);
+		fwrite($temp, $sendmail_msg);git 
 		fclose($temp);
 		
 		file_put_contents($tempFilename, $sendmail_msg);	
