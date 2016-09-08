@@ -14,6 +14,11 @@ $(document).ready(function(){
 			data: { name: name, email : email, subject: subject, message: message, resume: resume}
 		}).success(function(html){
 			form_holder_feedback = html;
+			$(function(){
+				$('#success').delay(500).fadeIn('normal', function(){
+					$(this).delay(2500).fadeOut();
+				});
+			});
 			$('input[type="text"').val('');
 			$('input[type="email"').val('');
 			$('textarea[name="message"').val('');
