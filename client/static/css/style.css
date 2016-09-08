@@ -24,7 +24,7 @@ p.indent{
 	padding-top: none;
 }
 img.pic{
-	height: 8em;
+	max-width: 80%;
 }
 #drop{
 	background: none;
