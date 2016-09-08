@@ -4,9 +4,10 @@
 		$subject = 'Message from ' . $_POST['name'] . ' (' . $_POST['email'] . ')';
 		$message = $_POST['message'];
 		$headers = "From: " . $_POST['email'] . "\r\n";
+		$resume = $_POST['resume'];
 
 
-		$sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\nmessage\n============\n$message";
+		$sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\n\n==============\n$message"."\n==============\n$resume";
 		
 		$temp = tmpfile();
 		$tempFilename = stream_get_meta_data($temp)['uri'];

@@ -15,7 +15,10 @@ $(document).ready(function(){
 			data: { name: name, email : email, subject: subject, message: message, resume: resume}
 		}).success(function(html){
 			form_holder_feedback = html;
-			$('#send')[0].reset();
+			$('input[type="text"').val('');
+			$('input[type="email"').val('');
+			$('textarea[name="message"').val('');
+			$('input[type="checkbox"').val('');
 		}).error(function(html){
 			form_holder_feedback = '<h2 id="message_feedback"> There was an error sending your message.</h2>';
 			
