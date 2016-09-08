@@ -6,11 +6,7 @@
 		$headers = "From: " . $_POST['email'] . "\r\n";
 		$resume = $_POST['resume'];
 
-		// if($_POST['name']=="" || $_POST['email']=="" || $_POST['message']==""){
-		// 	header('HTTP/1.1 500 Internal Server Error');
-		// 	echo "Error: Your form did not send";
-		// 	exit(1);
-		// }
+	
 		$sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\n\n==============\n$message"."\n==============\n$resume";
 		
 		$temp = tmpfile();
