@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	var form_holder = $('#form_holder');
 	var form_holder_feedback = '';
-	$(document).on('click', '#send', function(){
+	$(document).on('submit', '#send', function(){
 		var name= $('[name=name]').val();
 		var email = $('[name=email]').val();
 		var subject = $('[name=subject]').val();
@@ -30,6 +30,10 @@ $(document).ready(function(){
 					$(this).delay(5500).fadeOut();
 				});
 			});
+			$('input[type="text"').val('');
+			$('input[type="email"').val('');
+			$('textarea[name="message"').val('');
+			$('input[type="checkbox"').removeAttr('checked');
 		});		
 	});
 });
