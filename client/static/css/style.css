@@ -1,11 +1,13 @@
 #wrapper{ 
 	height: 90vh;
-  	width: 80vh; 
   	margin: auto;
   	background-color: rgba(255,255,255,0.3)
 }
 .w3-allerta { 
   	font-family: "Allerta Stencil", Sans-serif; 
+}
+#test{
+	max-width: 100%
 }
 #matrix{
 	height: 0;
@@ -28,12 +30,13 @@ img.pic{
 
 }
 iframe{
-	height: 25em;
-	max-width: 25em;
+	max-width: 100%;
 }
 input span{
 	vertical-align:text-top;
 }
-
+.w3-modal{
+	max-width: 100%
+}
 .w3-dropdown-content { min-width: 90px }
 /*.w3-modal { max-width: 35em; }*/
