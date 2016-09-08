@@ -25,7 +25,11 @@ $(document).ready(function(){
 			$('input[type="checkbox"').removeAttr('checked');
 		}).error(function(html){
 			form_holder_feedback = '<h2 id="message_feedback"> There was an error sending your message.</h2>';
-			
+			$(function(){
+				$('#fail').delay(500).fadeIn('normal', function(){
+					$(this).delay(5500).fadeOut();
+				});
+			});
 		});		
 	});
 });
