@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	var form_holder = $('#form_holder');
 	var form_holder_feedback = '';
-	$(document).on('submit', '#send', function(){
+	$(document).on('click', '#send', function(){
 		var name= $('[name=name]').val();
 		var email = $('[name=email]').val();
 		var subject = $('[name=subject]').val();
