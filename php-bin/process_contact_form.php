@@ -1,11 +1,11 @@
 <?php
-	if (isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['captcha'])){
+	if (isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['g-recaptcha'])){
 		$to = 'txjoe25@gmail.com';
 		$subject = 'Message from ' . $_POST['name'] . ' (' . $_POST['email'] . ')';
 		$message = $_POST['message'];
 		$headers = "From: " . $_POST['email'] . "\r\n";
 		$resume = $_POST['resume'];
-		$captcha = $_POST['captcha'];
+		$captcha = $_POST['g-recaptcha'];
 
 		if($_POST['name']=="" || $_POST['email']=="" || $_POST['message']==""){
 			header('HTTP/1.1 500 Internal Server Error');
