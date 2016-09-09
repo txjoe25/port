@@ -7,13 +7,14 @@ $(document).ready(function(){
 		var subject = $('[name=subject]').val();
 		var message = $('[name=message]').val();
 		var resume = $('[name=resume').prop('checked');
-		var captcha = $('[name=captcha').prop('checked');
+		// var captcha = $('[name=captcha').prop('checked');
 
 		$.ajax({
 			type: "POST",
 			url: "/php-bin/process_contact_form.php",
-			data: { name: name, email : email, subject: subject, message: message, resume: resume, captcha: captcha}
+			data: { name: name, email : email, subject: subject, message: message, resume: resume}
 		}).success(function(html){
+
 			form_holder_feedback = html;
 			$(function(){
 				$('#success').delay(500).fadeIn('normal', function(){
@@ -26,6 +27,7 @@ $(document).ready(function(){
 			$('input[type="checkbox"').removeAttr('checked');
 			$('div[name="captcha"').removeAttr('checked');
 		}).error(function(html){
+			console.log(html)
 			form_holder_feedback = '<h2 id="message_feedback"> There was an error sending your message.</h2>';
 			$(function(){
 				$('#fail').delay(500).fadeIn('normal', function(){
@@ -37,7 +39,7 @@ $(document).ready(function(){
 			$('textarea[name="message"').val('');
 			$('input[type="checkbox"').removeAttr('checked');
 			$('div[name="captcha"').removeAttr('checked');
-			
+
 		});		
 	});
 });
