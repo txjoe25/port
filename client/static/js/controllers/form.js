@@ -6,13 +6,13 @@ $(document).ready(function(){
 		var email = $('[name=email]').val();
 		var subject = $('[name=subject]').val();
 		var message = $('[name=message]').val();
-		var resume = $('[name=resume').prop('checked');
-		// var captcha = $('[name=captcha').prop('checked');
+		var resume = $('[name=resume]').prop('checked');
+		var captcha = $('[name=captcha]').prop('checked');
 
 		$.ajax({
 			type: "POST",
 			url: "/php-bin/process_contact_form.php",
-			data: { name: name, email : email, subject: subject, message: message, resume: resume}
+			data: { name: name, email : email, subject: subject, message: message, resume: resume, captcha: captcha}
 		}).success(function(html){
 
 			form_holder_feedback = html;
