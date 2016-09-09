@@ -11,6 +11,24 @@
 			echo "Error: Your form did not send";
 			exit(1);
 		}
+		if($_SERVER["REQUEST_METHOD"] === "POST"){
+	        //form submitted
+
+	        //check if other form details are correct
+
+	        //verify captcha
+	        $recaptcha_secret = "6LcKzCkTAAAAABrqYpKlMS6C-va0JOtMeFd16LwM";
+	        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$recaptcha_secret."&response=".$_POST['g-recaptcha-response']);
+	        $response = json_decode($response, true);
+	        if($response["success"] === true)
+	        {
+	            echo "Logged In Successfully";
+	        }
+	        else
+	        {
+	            echo "You are a robot";
+	        }
+	    }
 		$sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\n\n==============\n$message"."\n==============\nResume request: $resume";
 		
 		$temp = tmpfile();
