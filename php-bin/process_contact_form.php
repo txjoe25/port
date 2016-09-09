@@ -23,13 +23,7 @@
 	        if($response["success"] === true)
 	        {
 	            echo "Logged In Successfully";
-	        }
-	        else
-	        {
-	            echo "You are a robot";
-	        }
-	    }
-		$sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\n\n==============\n$message"."\n==============\nResume request: $resume";
+	            $sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\n\n==============\n$message"."\n==============\nResume request: $resume";
 		
 		$temp = tmpfile();
 		$tempFilename = stream_get_meta_data($temp)['uri'];
@@ -48,6 +42,13 @@
 			header('HTTP/1.1 500 Internal Server Error');
 			echo '<h2 id="message_feedback">There was a problem sending your message.</h2>';
 		}
+	        }
+	        else
+	        {
+	            echo "You are a robot";
+	        }
+	    }
+		
 	} else {
 		echo 'form incomplete';
 	}
