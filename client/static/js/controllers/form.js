@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var email = $('[name=email]').val();
 		var subject = $('[name=subject]').val();
 		var message = $('[name=message]').val();
-		var resume = $('[name=resume]').val();
+		var resume = $('[name=resume]').val('checked');
 
 		$.ajax({
 			type: "POST",
@@ -24,7 +24,6 @@ $(document).ready(function(){
 			$('input[type="email"]').val('');
 			$('textarea[name="message"]').val('');
 			$('input[type="checkbox"]').removeAttr('checked');
-			$('div[name="captcha"]').removeAttr('checked');
 		}).error(function(html){
 			console.log(html)
 			form_holder_feedback = '<h2 id="message_feedback"> There was an error sending your message.</h2>';
@@ -37,8 +36,6 @@ $(document).ready(function(){
 			$('input[type="email"]').val('');
 			$('textarea[name="message"]').val('');
 			$('input[type="checkbox"]').removeAttr('checked');
-			$('div[name="captcha"]').removeAttr('checked');
-
 		});		
 	});
 });
