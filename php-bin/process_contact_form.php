@@ -11,7 +11,7 @@
 			echo "Error: Your form did not send";
 			exit(1);
 		}
-		$sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\n\n==============\n$message"."\n==============\n$resume".$_POST['resume'];
+		$sendmail_msg = "Subject: $subject\r\nFrom: Me <joe@joeagnew.com>\r\nTo: Me <txjoe25@gmail.com>\r\n\r\nreply email: ".$_POST['email']."\n\n==============\n$message"."\n==============\n$resume";
 		
 		$temp = tmpfile();
 		$tempFilename = stream_get_meta_data($temp)['uri'];
