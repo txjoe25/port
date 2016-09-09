@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var email = $('[name=email]').val();
 		var subject = $('[name=subject]').val();
 		var message = $('[name=message]').val();
-		var resume = $('[name=resume').val();
+		var resume = $('[name=resume').prop('checked');
 
 		$.ajax({
 			type: "POST",
