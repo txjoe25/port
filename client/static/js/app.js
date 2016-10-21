@@ -4,6 +4,9 @@
         .when('/', {
           templateUrl: '/views/partials/index.html',
         })
+        .when('/secure',{
+          templateUrl: '/views/partials/secure.html',
+        })
         .otherwise({
           redirectTo: "/"
       });

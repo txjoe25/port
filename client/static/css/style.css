@@ -7,7 +7,7 @@
 .w3-allerta { 
   	font-family: "Allerta Stencil", Sans-serif; 
 }
-#test{
+#Joe{
 	max-width: 100%
 }
 #matrix{
@@ -45,3 +45,6 @@ input span{
 }
 .w3-dropdown-content { min-width: 90px }
 /*.w3-modal { max-width: 35em; }*/
+#player{
+	height: 1em;
+}

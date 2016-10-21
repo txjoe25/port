@@ -1,7 +1,18 @@
-
+<!-- <div ng-controller="repeatController">
+  I have {{friends.length}} friends. They are:
+  <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
+  <ul class="example-animate-container">
+    <li class="animate-repeat" ng-repeat="friend in friends | filter:q as results">
+      [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+    </li>
+    <li class="animate-repeat" ng-if="results.length === 0">
+      <strong>No results found...</strong>
+    </li>
+  </ul>
+</div> -->
 <div class="w3-center">
-<img id="test" src="static/images/3004240.jpg" class="w3-circle" alt="Joe Agnew">
-<h1 class=" w3-center w3-allerta">Joe Agnew</h1>
+<img id="Joe" src="static/images/3004240.jpg" class="w3-circle" alt="Joe Agnew">
+<h1 id="Joe_Agnew" style="color: white" class="w3-center w3-allerta">Joe Agnew</h1>
 <button  onclick="document.getElementById('id01').style.display='block'" class="w3-btn w3-text-white w3-round-xxlarge">Contact</button>
 <button onclick="document.getElementById('id02').style.display='block'" class="w3-btn w3-text-white w3-round-xxlarge">About</button>
 
@@ -11,10 +22,17 @@
 			<a onclick="document.getElementById('ruby').style.display='block'" class="w3-btn w3-white w3-round-xxlarge">Ruby</a>
 			<a onclick="document.getElementById('mean').style.display='block'" class="w3-btn w3-white w3-round-xxlarge">MEAN</a>
 		</div>
-</div><br>
-<button class="w3-btn w3-round-xxlarge"><a href="https://www.linkedin.com/in/joe-agnew"><i class="fa fa-linkedin-square w3-text-white" aria-hidden="true"></i></a></button>
-<button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
-
+</div><br><br>
+<div id="social">
+    <button class="w3-btn w3-round-xxlarge"><a href="https://www.linkedin.com/in/joe-agnew"><i class="fa fa-linkedin-square w3-text-white" aria-hidden="true"></i></a></button>
+    <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
+    <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://twitter.com/TXJOE25?lang=en"><i class="fa fa-twitter w3-text-white" aria-hidden="true"></i></a></button>
+</div>
+<br>
+<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player" style="display:none">
+      <img style="height: 3em" src="static/images/ball.png">
+    </div>
 <div id="id01" class="w3-modal">
   <div class="w3-modal-content w3-animate-opacity w3-card-8">
     <header class="w3-container w3-black w3-center">
@@ -26,8 +44,8 @@
     <form class="w3-form" id="contact_form">
         <input class="w3-input w3-center" placeholder="Name" type="text" id="name" name="name" required><br>
         <input class="w3-input w3-center" placeholder="Email" type="email" id="email" name="email" required><br>   
-        <textarea id="message" class="w3-input w3-center" placeholder="Message..." name="message" required></textarea><br>
-        <input style="width: 1.5em; height: 1.5em" class="w3-left w3-input" type="checkbox" name="resume" value="Resume Requested"><span class="w3-left">Request Resume</span><br>
+        <textarea id="message" class="w3-input w3-center" placeholder="Message" name="message" required></textarea><br>
+        <!-- <input style="width: 1.5em; height: 1.5em" class="w3-left w3-input" type="checkbox" name="resume" value="Resume Requested"><span class="w3-left">Request Resume</span><br> -->
         <p style="display:none; color: green;" id="success">Your message has successfully sent!</p>
         <p style="display:none; color: red;" id="fail">Error: Fill out all fields</p>
 	    <button id="send" class="w3-btn w3-round-xxlarge w3-ripple w3-right" value="Send" type="submit">Send</button>
@@ -47,7 +65,7 @@
     </header>
       <p class="indent">Joe Agnew is a full stack developer from Texas. He started his professional career as a real estate representative in the Dallas Market, but soon found a passion for computers. He began his interest by acquiring 11 Information Technology Certifications(CompTIA A+, CompTIA Networking+, CompTIA Security+, MTA: Networking Fundamentals, MTA:Windows operating System Fundamentals, MTA:Security Fundamentals, MCTS: Windows 7 Configuration, MTA:Windows Server Administration Fundamentals, MCTS: Windows Server 2008 Active Directory Configuration, MCTS: Windows Server 2008 Network Infrastructure Configuration, MCTS: Windows Server 2008 Server Administrator). Ultimately, giving him the designation of MCSA: Windows Server 2008, as well as MCPS: Microsoft Certified Professional.</p>
       <p class="indent">Upon completing the necessary baseline understanding of the PC. Joe soon progressed into creating and developing. He completed a rigorous training in web development at Coding Dojo-Dallas, obtaining the knowledge of how to be a successful full stack developer. During his time at the Dojo, Joe was awarded a Yellow Belt for this understanding of HTML/CSS, as well as a double Black Belt for exemplary honors in both MEAN and Ruby on Rails stacks. A Black Belt at the Dojo is obtained by creating and deploying a program from wire frames in under 4.5 hours. During the final week at the Dojo, a hackathon was established. Joe teamed up with a fellow cohort member to win the prized Green Belt!</p>
-      <p class="indent">When Joe's not entrenched in creating something new on his PC, he stays active by enjoying the outdoors. You can find him playing or watching just about any sport imaginable.  If there's a spare moment, he likes to play video games too!</p>
+      <p class="indent">When Joe's not entrenched in creating something new on his PC, he stays active by enjoying the outdoors. You can find him playing or watching just about any sport imaginable.  If there's a spare moment, he likes to <span class="play">play video games</span> too!</p>
     <footer class="w3-container w3-white">
     <img class="pic" src="static/images/a+.png"><img class="pic" src="static/images/net.png"><img class="pic" src="static/images/sec+.png"><br><br><img class="pic" src="static/images/MCPS.jpg"><br><br><br>
     </footer>
