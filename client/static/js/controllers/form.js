@@ -16,12 +16,30 @@ $(document).ready(function(){
   		ball.show();
   		$("#youtube").show();
   		$("#twitch").show();
+  		$("#ball").rotate({
+		  bind:
+		  {
+		    mouseover : function() {
+		    $(this).rotate({animateTo:180})
+		  },
+		  mouseout : function() {
+		    $(this).rotate({animateTo:0})
+		    }
+		  }
+	});
+
   	});
   		$(document).on('click','#twitch',function(){
   			var name = $("#name");
         	var joe = $("#Joe_Agnew")
   			var twitch = $("#player1");
   				$('#home').hide();
+  				 // twitch.animate({height: '5em', opacity: '0.4'}, "slow");
+		     //    twitch.animate({width: '-5em', opacity: '0.8'}, "slow");
+		     	// twitch.animate({height: '10em', opacity: '0.4'}, "slow");
+		        twitch.animate({width: '-10em', opacity: '0.8'}, "slow");
+		        twitch.animate({width: '200%', opacity: '0.8'}, "slow");
+		        twitch.animate({height: '100%', opacity: '1'}, "slow");
   				twitch.show();
   			var options = {
 				width: 1500,
@@ -32,8 +50,8 @@ $(document).ready(function(){
 
 			var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
 			player.setVolume(0.5);
-
 		});
+
 		$(document).on('click','#ball',function(){
 			if('#player1' || '#player'){
 				$('#player1').hide();
