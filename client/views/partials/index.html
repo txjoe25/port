@@ -1,51 +1,66 @@
-<!-- <div ng-controller="repeatController">
-  I have {{friends.length}} friends. They are:
-  <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
-  <ul class="example-animate-container">
-    <li class="animate-repeat" ng-repeat="friend in friends | filter:q as results">
-      [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
-    </li>
-    <li class="animate-repeat" ng-if="results.length === 0">
-      <strong>No results found...</strong>
-    </li>
-  </ul>
-</div> -->
 <div class="w3-center">
+<div id="name">
 <img id="Joe" src="static/images/3004240.jpg" class="w3-circle" alt="Joe Agnew">
-<h1 id="Joe_Agnew" style="color: white" class="w3-center w3-allerta">Joe Agnew</h1>
-<button  onclick="document.getElementById('id01').style.display='block'" class="w3-btn w3-text-white w3-round-xxlarge">Contact</button>
-<button onclick="document.getElementById('id02').style.display='block'" class="w3-btn w3-text-white w3-round-xxlarge">About</button>
 
-<div class="w3-dropdown-hover w3-center">
-	<button class="w3-btn w3-center w3-black w3-round-xxlarge">Projects</button>
-		<div id="drop" class="w3-dropdown-content">
-			<a onclick="document.getElementById('ruby').style.display='block'" class="w3-btn w3-white w3-round-xxlarge">Ruby</a>
-			<a onclick="document.getElementById('mean').style.display='block'" class="w3-btn w3-white w3-round-xxlarge">MEAN</a>
-		</div>
-</div><br><br>
-<div id="social">
-    <button class="w3-btn w3-round-xxlarge"><a href="https://www.linkedin.com/in/joe-agnew"><i class="fa fa-linkedin-square w3-text-white" aria-hidden="true"></i></a></button>
-    <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
-    <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://twitter.com/TXJOE25?lang=en"><i class="fa fa-twitter w3-text-white" aria-hidden="true"></i></a></button>
+</div>
+
+
+<div id="home">
+  <h1 id="Joe_Agnew" style="color: white; cursor: crosshair;" class="w3-center w3-allerta">Joe</h1>
+  <button  onclick="document.getElementById('id01').style.display='block'" class="w3-btn w3-text-white w3-round-xxlarge">Contact</button>
+  <button onclick="document.getElementById('id02').style.display='block'" class="w3-btn w3-text-white w3-round-xxlarge">About</button>
+
+  <!-- <div class="w3-dropdown-hover w3-center">
+  	<button class="w3-btn w3-center w3-black w3-round-xxlarge">Projects</button>
+  		<div id="drop" class="w3-dropdown-content">
+  			<a onclick="document.getElementById('ruby').style.display='block'" class="w3-btn w3-white w3-round-xxlarge">Ruby</a>
+  			<a onclick="document.getElementById('mean').style.display='block'" class="w3-btn w3-white w3-round-xxlarge">MEAN</a>
+  		</div>
+  </div> --><br><br>
+  <div id="social">
+      <button class="w3-btn w3-round-xxlarge"><a href="https://www.linkedin.com/in/joe-agnew"><i class="fa fa-linkedin-square w3-text-white" aria-hidden="true"></i></a></button>
+      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
+      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://twitter.com/TXJOE25?lang=en"><i class="fa fa-twitter w3-text-white" aria-hidden="true"></i></a></button>
+      <br><br>
+       <button id="youtube" style="display:none" class="w3-btn w3-round-xxlarge"><a href="https://www.youtube.com/channel/UCYZVLtllvazKiwMi_tuZEbA"><i class="fa fa-youtube-play w3-text-white" aria-hidden="true"></i></a></button>
+        <button id="twitch" style="display:none" class="w3-btn w3-round-xxlarge"><i class="fa fa-twitch w3-text-white" aria-hidden="true"></i></a></button>
+  </div>
 </div>
 <br>
-<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player" style="display:none">
-      <img style="height: 3em" src="static/images/ball.png">
-    </div>
+<!-- <img src="/static/images/ball.png"> -->
+
+  <div id="player1" style="display:none">
+      
+      <iframe class="stream" src="https://player.twitch.tv/?channel=txjoe25" frameborder="3" scrolling="no" height="300em" width="100%"></iframe>
+    <!-- <iframe frameborder="0"
+        scrolling="yes"
+        id="chat_embed"
+        src="http://www.twitch.tv/txjoe25/chat"
+        height="100%"
+        width="100%">
+      </iframe> -->
+  </div>
+    <!-- <div id="tube" >
+        <iframe id="player" style="display: none" type="text/html" frameborder="3" width="640" height="390"
+        src="rtmp://a.rtmp.youtube.com/live2"></iframe>
+    </div> -->
+    <img id="ball" style="display:none; height:3em" src="/static/images/ball.png">
+</div>
+
+
 <div id="id01" class="w3-modal">
   <div class="w3-modal-content w3-animate-opacity w3-card-8">
     <header class="w3-container w3-black w3-center">
       <span onclick="document.getElementById('id01').style.display='none'"
       class="w3-closebtn">&times;</span>
-      <h2>Contact Joe</h2>
+<!--       <h2>Note</h2> -->
     </header>
     <div id="form_holder">
     <form class="w3-form" id="contact_form">
         <input class="w3-input w3-center" placeholder="Name" type="text" id="name" name="name" required><br>
         <input class="w3-input w3-center" placeholder="Email" type="email" id="email" name="email" required><br>   
-        <textarea id="message" class="w3-input w3-center" placeholder="Message" name="message" required></textarea><br>
-        <!-- <input style="width: 1.5em; height: 1.5em" class="w3-left w3-input" type="checkbox" name="resume" value="Resume Requested"><span class="w3-left">Request Resume</span><br> -->
+        <textarea id="message" class="w3-input w3-center" placeholder="Note" name="message" required></textarea><br>
+        <input style="width: 1.5em; height: 1.5em" class="w3-left w3-input" type="checkbox" name="resume" value="Resume Requested"><span class="w3-left">Meeting Request</span><br>
         <p style="display:none; color: green;" id="success">Your message has successfully sent!</p>
         <p style="display:none; color: red;" id="fail">Error: Fill out all fields</p>
 	    <button id="send" class="w3-btn w3-round-xxlarge w3-ripple w3-right" value="Send" type="submit">Send</button>
