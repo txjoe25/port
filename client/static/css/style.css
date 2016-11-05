@@ -1,8 +1,9 @@
+
 #wrapper{ 
 	height: 90vh;
-	width: 50%;
+	width: 75%;
   	margin: auto;
-  	background-color: rgba(255,255,255,0.3)
+  	background-color: rgba(255,255,255, 1)
 }
 .w3-allerta { 
   	font-family: "Allerta Stencil", Sans-serif; 
@@ -11,11 +12,18 @@
 	max-width: 100%
 }
 #matrix{
-	height: 0;
-	width: 0;
+	height: 150%;
+	width: 100%;
 	position: absolute;
 	top: 0;
 	z-index: -1;
+}
+#q{
+	height: 150%;
+	width: 150%;
+}
+#player1{
+	display: block;
 }
 p.indent{
 	padding-left: 1.8em;
@@ -43,6 +51,5 @@ input span{
 .w3-modal{
 	max-width: 100%
 }
-.w3-dropdown-content { min-width: 90px }
-/*.w3-modal { max-width: 35em; }*/
-
+.ui-loading .ui-loader { display: block; }
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }

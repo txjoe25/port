@@ -1,37 +1,24 @@
 <div class="w3-center">
 <div id="name">
-<img id="Joe" src="static/images/3004240.jpg" class="w3-circle" alt="Joe Agnew">
-
+<h1 class="w3-center w3-allerta w3-round-xxlarge"><img id="Joe" src="/static/images/ball2.png" style="opacity: 1;height: 1em" class="w3-circle" alt="Joe Agnew"></h1>
 </div>
-
-
 <div id="home">
-  <h1 id="Joe_Agnew" style="color: white; cursor: crosshair;" class="w3-center w3-allerta">Joe</h1>
-  <button  onclick="document.getElementById('id01').style.display='block'" class="w3-btn w3-text-white w3-round-xxlarge">Contact</button>
-  <button onclick="document.getElementById('id02').style.display='block'" class="w3-btn w3-text-white w3-round-xxlarge">About</button>
-
-  <!-- <div class="w3-dropdown-hover w3-center">
-  	<button class="w3-btn w3-center w3-black w3-round-xxlarge">Projects</button>
-  		<div id="drop" class="w3-dropdown-content">
-  			<a onclick="document.getElementById('ruby').style.display='block'" class="w3-btn w3-white w3-round-xxlarge">Ruby</a>
-  			<a onclick="document.getElementById('mean').style.display='block'" class="w3-btn w3-white w3-round-xxlarge">MEAN</a>
-  		</div>
-  </div> --><br><br>
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-btn w3-text-black w3-white w3-round-xxlarge" style="position: relative"><i class="fa fa-envelope" aria-hidden="true" style="color: grey; font-size: 3em";></i></button><br><br>
+  <button onclick="document.getElementById('id02').style.display='block'" class="w3-btn w3-text-black w3-white w3-round-xxlarge" style="position: relative"><i class="fa fa-university" aria-hidden="true" style="position: relative; left:.1em; color: grey; font-size: 3em"></i></button>
+<br><br>
   <div id="social">
-      <button class="w3-btn w3-round-xxlarge"><a href="https://www.linkedin.com/in/joe-agnew"><i class="fa fa-linkedin-square w3-text-white" aria-hidden="true"></i></a></button>
-      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
-      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://twitter.com/TXJOE25?lang=en"><i class="fa fa-twitter w3-text-white" aria-hidden="true"></i></a></button>
-      <br><br>
-       <button id="youtube" style="display:none" class="w3-btn w3-round-xxlarge"><a href="https://www.youtube.com/channel/UCYZVLtllvazKiwMi_tuZEbA"><i class="fa fa-youtube-play w3-text-white" aria-hidden="true"></i></a></button>
-        <button id="twitch" style="display:none" class="w3-btn w3-round-xxlarge"><i class="fa fa-twitch w3-text-white" aria-hidden="true"></i></a></button>
+      <button id="weatherb" style="position: relative" class="w3-btn w3-white w3-round-xxlarge"><i style="font-size: 3em" class="fa fa-cloud w3-text-grey" aria-hidden="true"></i></button><br><br>
+      <button id="twitch" style="position: relative" class="w3-btn w3-white w3-round-xxlarge"><i class="fa fa-twitch w3-text-grey" style="font-size: 3em" aria-hidden="true"></i></a></button>
+      <br><br>    
   </div>
 </div>
 <br>
-  <div id="player1" style="display:none">
-      
-      <iframe class="stream w3-half" src="https://player.twitch.tv/?channel=txjoe25" frameborder="3" scrolling="no" height="300em" width="100%"></iframe>
-
+  <div id="player1" style="display:none">     
+    <iframe class="stream w3-half" src="https://player.twitch.tv/?autoplay=false&channel=txjoe25" frameborder="3" scrolling="no" style="min-height: 35em; min-width: 100%"></iframe>
   </div>
+  <div id="map-canvas" class="w3-container w3-center" style="display: none; height: 25em; width: 100%"></div>
+</div>
+<div class="w3-center">
     <img id="ball" style="display:none; height:3em" src="/static/images/ball.png">
 </div>
 
@@ -48,6 +35,7 @@
         <input class="w3-input w3-center" placeholder="Email" type="email" id="email" name="email" required><br>   
         <textarea id="message" class="w3-input w3-center" placeholder="Note" name="message" required></textarea><br>
         <input style="width: 1.5em; height: 1.5em" class="w3-left w3-input" type="checkbox" name="resume" value="Resume Requested"><span class="w3-left">Meeting Request</span><br>
+        <input style="display:none" type="datetime-local" name="date">
         <p style="display:none; color: green;" id="success">Your message has successfully sent!</p>
         <p style="display:none; color: red;" id="fail">Error: Fill out all fields</p>
 	    <button id="send" class="w3-btn w3-round-xxlarge w3-ripple w3-right" value="Send" type="submit">Send</button>
@@ -62,7 +50,12 @@
     <header class="w3-container w3-white w3-center">
       <span onclick="document.getElementById('id02').style.display='none'"
       class="w3-closebtn">&times;</span>
-      <h2><img class="ninja" src="static/images/yellow_belt.png"><img class="ninja" src="static/images/black_belt.png"><img class="ninja" src="static/images/black_belt.png"><img class="ninja" src="static/images/green_belt.png"></h2>
+      <h2>
+        <img class="ninja" src="static/images/yellow_belt.png">
+        <img id="black" class="ninja" src="static/images/black_belt.png">
+        <img id="black1" class="ninja" src="static/images/black_belt.png">
+        <img class="ninja" src="static/images/green_belt.png">
+      </h2>
 
     </header>
       <p class="indent">Joe Agnew is a full stack developer from Texas. He started his professional career as a real estate representative in the Dallas Market, but soon found a interest in computers. He began his tech career by acquiring 11 Information Technology Certifications(CompTIA A+, CompTIA Networking+, CompTIA Security+, MTA: Networking Fundamentals, MTA:Windows Operating System Fundamentals, MTA:Security Fundamentals, MCTS: Windows 7 Configuration, MTA:Windows Server Administration Fundamentals, MCTS: Windows Server 2008 Active Directory Configuration, MCTS: Windows Server 2008 Network Infrastructure Configuration, MCTS: Windows Server 2008 Server Administrator). Ultimately, giving him the designation of MCSA: Windows Server 2008, as well as MCPS: Microsoft Certified Professional.</p>
@@ -70,49 +63,6 @@
       <p class="indent">When Joe's not entrenched in creating something new on his PC, he stays active by enjoying the outdoors. You can find him playing or watching just about any sport imaginable.  If there's a spare moment, he likes to <span class="play">play video games</span> too!</p>
     <footer class="w3-container w3-white w3-center">
     <img class="pic" src="static/images/a+.png"><img class="pic" src="static/images/net.png"><img class="pic" src="static/images/sec+.png"><br><br><img class="pic" src="static/images/MCPS.jpg"><br><br><br>
-    </footer>
-  </div>
-</div>
-
-<div id="ruby" class="w3-modal">
-  <div class="w3-modal-content w3-black w3-animate-opacity w3-card-8" style="padding-left:5em; padding-right:5em;">
-    <header class="w3-black w3-center">
-      <span onclick="document.getElementById('ruby').style.display='none'"
-      class="w3-closebtn">&times;</span>
-      <h2>Ruby</h2>
-    </header>
-      <iframe src="http://www.youtube.com/embed/egdTiswwDRk" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-    <footer class="w3-black">
-      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25/event_calendar"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
-    </footer>
-        <iframe src="http://www.youtube.com/embed/D74w4Mtx5QM" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-       <footer class="w3-container w3-black">
-        <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25/Group_members"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
-      </footer>
-      </div>
-    </div>
-  <div id="mean" class="w3-modal">
-  <div class="w3-modal-content w3-black w3-animate-opacity w3-card-8" style="padding-left:5em; padding-right:5em;">
-    <header class="w3-container w3-black w3-center">
-      <span onclick="document.getElementById('mean').style.display='none'"
-      class="w3-closebtn">&times;</span>
-      <h2>MEAN</h2>
-    </header>
-      <iframe class="w3-center" src="http://www.youtube.com/embed/ECrwY-gjqFs" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-    <footer class="w3-container w3-black">
-      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25/Q_A"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
-    </footer>
-    <iframe class="w3-center" src="http://www.youtube.com/embed/zewtIQZHFkQ" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-    <footer class="w3-container w3-black">
-      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25/Discussion_board"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
-    </footer>
-   <iframe class="w3-center" src="http://www.youtube.com/embed/KY6tkGuBvk8" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-   <footer class="w3-container w3-black">
-      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25/Friends"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
-    </footer>
-   <iframe class="w3-center" src="http://www.youtube.com/embed/wYRygBMUH78" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-    <footer class="w3-container w3-black">
-      <button class="w3-btn w3-black w3-round-xxlarge"><a href="https://github.com/txjoe25/mini-store"><i class="fa fa-github w3-text-white" aria-hidden="true"></i></a></button>
     </footer>
   </div>
 </div>

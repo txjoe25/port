@@ -4,7 +4,8 @@ var express  = require( 'express' ),
     root     = __dirname,
     port     = process.env.PORT || 5000,
     app      = express();
-
+require("./server/config/routes.js");
+require("./server/config/mongoose.js");
 
 app.use( express.static( path.join( root, 'client' )));
 app.use( express.static( path.join( root, 'bower_components' )));
