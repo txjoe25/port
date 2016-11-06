@@ -1,18 +1,7 @@
 $(document).ready(function(){
-
 	console.log("doc.ready");
 	var form_holder = $('#form_holder');
 	var form_holder_feedback = '';
-
-	function weather(){
-		var aerisMapBuilder = new aeris.interactive.MapAppBuilder({
-        apiId: 'wgE96YE3scTQLKjnqiMsv',
-        apiSecret: 'lr5YAfQRoB9KWh7gX3wd3SZMcOj4ACWLNIqgaSF1',
-        el: '#map-canvas'
-    });
-		aerisMapBuilder.start();
-	};
-	weather();
 	$(document).on('click','#weatherb', function(){
 		weatherButton();
 	});
@@ -22,6 +11,15 @@ $(document).ready(function(){
   	$(document).on('click','#twitch',function(){
   		twitchButton();
 	}); 
+		function weather(){
+		var aerisMapBuilder = new aeris.interactive.MapAppBuilder({
+        apiId: 'wgE96YE3scTQLKjnqiMsv',
+        apiSecret: 'lr5YAfQRoB9KWh7gX3wd3SZMcOj4ACWLNIqgaSF1',
+        el: '#map-canvas'
+    });
+		aerisMapBuilder.start();
+	};
+	weather();
 	$(document).on('click', '#send', function(){
 		var name= $('[name=name]').val();
 		var email = $('[name=email]').val();
