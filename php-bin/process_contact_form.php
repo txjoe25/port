@@ -1,5 +1,5 @@
 <?php
-	if (isset($_POST['name'], $_POST['email'], $_POST['message'],)){
+	if (isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['resume'])){
 		$to = 'txjoe25@gmail.com';
 		$subject = 'Message from ' . $_POST['name'] . ' (' . $_POST['email'] . ')';
 		$message = $_POST['message'];
