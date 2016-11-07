@@ -12,4 +12,4 @@ $( "#ball" ).hover(
   	$(this).css({"transform": "rotate(0deg)"})
   }
 );
-	} 
+	}; 

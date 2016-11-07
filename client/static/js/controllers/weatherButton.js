@@ -3,4 +3,4 @@ function weatherButton(){
 		$("#map-canvas").show();
 		$("#ball").show();
 		closeBall();
-}
+};

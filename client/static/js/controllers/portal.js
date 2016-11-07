@@ -13,11 +13,5 @@ function portal() {
     	$scope.addPerson = function(){
 
     	}
-  //   	$scope.addStudent = function (){
-		//     // add to the array
-		//     $scope.students.push($scope.newStudent); 
-		//     // clear the form values
-		//     $scope.newStudent = {};
-		// }
     }
 };

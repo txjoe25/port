@@ -13,5 +13,5 @@ function twitchButton(){
 
 	var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
 	player.setVolume(0.5);
-}
+};
 

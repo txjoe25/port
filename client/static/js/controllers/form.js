@@ -6,7 +6,7 @@ $(document).ready(function(){
 		weatherButton();
 	});
 	$(document).on('click','#Joe', function(){
-        clickJoe()
+        clickJoe();
 	});
   	$(document).on('click','#twitch',function(){
   		twitchButton();
@@ -18,7 +18,7 @@ $(document).ready(function(){
         el: '#map-canvas'
     });
 		aerisMapBuilder.start();
-	};
+	}
 	weather();
 	$(document).on('click', '#send', function(){
 		var name= $('[name=name]').val();
