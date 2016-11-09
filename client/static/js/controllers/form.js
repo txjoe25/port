@@ -18,6 +18,7 @@ $(document).ready(function(){
         el: '#map-canvas'
     });
 		aerisMapBuilder.start();
+		$(document).bind("projectLoadComplete", weather);
 	}
 	weather();
 	$(document).on('click', '#send', function(){
