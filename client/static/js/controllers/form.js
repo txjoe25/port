@@ -16,7 +16,7 @@ $(document).ready(function(){
         apiId: 'wgE96YE3scTQLKjnqiMsv',
         apiSecret: 'lr5YAfQRoB9KWh7gX3wd3SZMcOj4ACWLNIqgaSF1',
         el: '#map-canvas'
-    });
+    })
 		aerisMapBuilder.start();
 		$(document).bind("projectLoadComplete", weather);
 	}
