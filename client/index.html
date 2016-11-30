@@ -27,6 +27,14 @@
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.js"></script>
   <script type="text/javascript" src="//cdn.aerisjs.com/aeris-interactive/aim-leaflet.js"></script>
+  <script type="text/javascript">
+   window.onload = function () {
+    if (! localStorage.justOnce) {
+        localStorage.setItem("justOnce", "true");
+        window.location.reload();
+    }
+};
+  </script>
   <title>Joe Agnew</title>
 </head>
 <body id="bod" style="margin:0" onload="for(s=window.screen,w=q.width=s.width,h=q.height=s.height,m=Math.random,p=[],i=0;i<256;p[i++]=1);setInterval('9Style=\'rgba(180,180,180,.25)\'9Rect(0,0,w,h)9Style=\'#ffffff\';p.map(function(v,i){9Text(String.fromCharCode(m()*82+65),i*10,v);p[i]=v>758+m()*1e4?0:v+10})'.split(9).join(';q.getContext(\'2d\').fill'),33)">
